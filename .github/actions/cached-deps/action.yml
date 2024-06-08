@@ -8,7 +8,7 @@ runs:
       uses: actions/cache@v4
       with: 
         path: node_modules
-        keys: deps-node-modules-${{  hashFiles('**/package-lock.json')  }}
+        key: deps-node-modules-${{  hashFiles('**/package-lock.json')  }}
     - name: install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
